@@ -1,0 +1,47 @@
+﻿@model IEnumerable<JobPortal.Models.Applied>
+@{
+    ViewBag.Title = "Appliedjobs";
+}
+
+<table class="table table-bordered">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Jobs.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppliedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Jobs.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppliedOn)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+
+
+            <td>
+                <a href="/userjobs/apply?jobid=@item.JobId">Detail</a> |
+                <a href="/userjobs/deleteapplied?jobid=@item.JobId" onclick="return confirm('Are you sure you want to delete?')">Delete</a> 
+                
+            </td>
+        </tr>
+    }
+
+</table>
+

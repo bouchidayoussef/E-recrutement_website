@@ -1,0 +1,128 @@
+﻿@model JobPortal.Models.jobs
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>jobs</h4>
+    <hr />
+    <dl class="dl-horizontal">
+       
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Skills)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Skills)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequiredDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequiredDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequiredResponsibilities)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequiredResponsibilities)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequiredQualification)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequiredQualification)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequiredExperience)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequiredExperience)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HrsPerWeek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HrsPerWeek)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinExpInYr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinExpInYr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoOfOpening)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoOfOpening)
+        </dd>
+
+       
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+       
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.JobId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,418 @@
+﻿
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title </title>
+    <meta content="" name="description" />
+    <meta content="ICodeDigita (SMC) Pvt Ltd" name="author" />
+    <meta name="MobileOptimized" content="320" />
+
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/Website/css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/Website/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/Website/css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/Website/css/flaticon.css" />
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/Website/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/Website/css/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/Website/css/owl.theme.default.css" />
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/Website/css/dropify.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/Website/css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/Website/css/magnific-popup.css" />
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/Website/css/nice-select.css" />
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/Website/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/Website/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/Website/css/responsive.css" />
+    <link href="~/App_Themes/Website/css/jquery-ui.min.css" rel="stylesheet" />
+    <script src="~/App_Themes/Website/js/jquery-3.3.1.min.js?@DateTime.Now.Ticks"></script>
+    <script src="~/App_Themes/Website/js/jquery-ui.js"></script>
+    @RenderSection("styles", required: false)
+</head>
+<body>
+
+    <a href="javascript:" id="return-to-top" class="return_top3"><i class="fas fa-angle-double-up"></i></a>
+
+    <nav class="cd-dropdown  d-block d-sm-block d-md-block d-lg-none d-xl-none">
+        <h2>
+            <a href="/" title="Jobs">
+                <img src="@Url.Content("~/App_Themes/Website/images/petrogate.png")" height="45px" alt="Jobs" />
+            </a>
+        </h2>
+        <a href="#0" class="cd-close">Close</a>
+        <ul class="cd-dropdown-content">
+            <li>
+                <form class="cd-search">
+                    <input type="search" placeholder="Search...">
+                </form>
+            </li>
+            <li class="has-children">
+                <a href="/">home</a>
+            </li>
+            <li class="">
+                <a href="/userjobss">jobs</a>
+
+
+            </li>
+            <!-- .has-children -->
+
+            @if (User.IsInRole("Recruiter"))
+            {
+
+                <li class="has-children">
+                    <a href="/jobs">Add Jobs</a>
+                    <ul class="cd-secondary-dropdown icon_menu is-hidden" id="sectorNav">
+                    </ul>
+
+
+                </li>
+            }
+            <li class="has-children">
+                <a href="#">About Us</a>
+                <ul class="cd-secondary-dropdown icon_menu is-hidden" id="">
+                    <li class="parent">
+                        <a href="/joinus"><i class="fas fa-square"></i> Join Us</a>
+                    </li>
+                </ul>
+
+
+            </li>
+
+            <li><a href="/account/login">login</a></li>
+        </ul>
+        <!-- .cd-dropdown-content -->
+    </nav>
+
+    <div class="cp_navi_main_wrapper jb_cover">
+        <div class="container-fluid">
+            <div class="cp_logo_wrapper">
+                <a href="/" title="">
+                    <img src="@Url.Content("~/Content/logo.jpg")" height="45px" alt="Jobs" />
+                </a>
+            </div>
+
+            <!-- mobile menu area start -->
+            <header class="mobail_menu d-block d-sm-block d-md-block d-lg-none d-xl-none">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="cd-dropdown-wrapper">
+                                <a class="house_toggle" href="#0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 31.177 31.177" style="enable-background:new 0 0 31.177 31.177;" xml:space="preserve" width="25px" height="25px">
+                                    <g>
+                                    <g>
+                                    <path class="menubar" d="M30.23,1.775H0.946c-0.489,0-0.887-0.398-0.887-0.888S0.457,0,0.946,0H30.23    c0.49,0,0.888,0.398,0.888,0.888S30.72,1.775,30.23,1.775z" fill="#004165"></path>
+                                            </g>
+                                    <g>
+                                    <path class="menubar" d="M30.23,9.126H12.069c-0.49,0-0.888-0.398-0.888-0.888c0-0.49,0.398-0.888,0.888-0.888H30.23    c0.49,0,0.888,0.397,0.888,0.888C31.118,8.729,30.72,9.126,30.23,9.126z" fill="#004165"></path>
+                                            </g>
+                                    <g>
+                                    <path class="menubar" d="M30.23,16.477H0.946c-0.489,0-0.887-0.398-0.887-0.888c0-0.49,0.398-0.888,0.887-0.888H30.23    c0.49,0,0.888,0.397,0.888,0.888C31.118,16.079,30.72,16.477,30.23,16.477z" fill="#004165"></path>
+                                            </g>
+                                    <g>
+                                    <path class="menubar" d="M30.23,23.826H12.069c-0.49,0-0.888-0.396-0.888-0.887c0-0.49,0.398-0.888,0.888-0.888H30.23    c0.49,0,0.888,0.397,0.888,0.888C31.118,23.43,30.72,23.826,30.23,23.826z" fill="#004165"></path>
+                                            </g>
+                                    <g>
+                                    <path class="menubar" d="M30.23,31.177H0.946c-0.489,0-0.887-0.396-0.887-0.887c0-0.49,0.398-0.888,0.887-0.888H30.23    c0.49,0,0.888,0.398,0.888,0.888C31.118,30.78,30.72,31.177,30.23,31.177z" fill="#004165"></path>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- .cd-dropdown-wrapper -->
+
+            </header>
+            @if (Request.IsAuthenticated)
+            {
+
+                using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="menu_btn_box header_btn jb_cover">
+                        <ul>
+                            <li>
+                                @Html.ActionLink(User.Identity.Name + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                            </li>
+                            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                        </ul>
+                    </div>
+
+
+                }
+            }
+            else
+            {
+                <div class="menu_btn_box header_btn jb_cover">
+                    <ul>
+
+                        <li>
+                            <a href="/account/login"><i class="flaticon-man-user"></i> Log in</a>
+                        </li>
+                        <li id="signup">
+                            <a><i class="flaticon-man-user"></i> sign up</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            }
+
+
+
+            <div class="jb_navigation_wrapper">
+                <div class="mainmenu d-xl-block d-lg-block d-md-none d-sm-none d-none">
+                    <ul class="main_nav_ul">
+
+                        <li class="has-mega gc_main_navigation">
+                            <a href="/userjobs/" class="gc_main_navigation">Jobs</a>
+                            <ul class="navi_2_dropdown" id="jobNav">
+                            </ul>
+                        </li>
+                        @if (Request.IsAuthenticated && !User.IsInRole("Recruiter") && !User.IsInRole("Admin"))
+                        {
+                            <li class="has-mega gc_main_navigation">
+                                <a href="/userjobs/appliedjobs" class="gc_main_navigation">Applied Jobs</a>
+                                <ul class="navi_2_dropdown" id="jobNav">
+                                </ul>
+                            </li>
+                        }
+
+                        @if (User.IsInRole("Recruiter") || User.IsInRole("Admin"))
+                        {
+                            <li class="has-mega gc_main_navigation">
+                                <a href="/jobs" class="gc_main_navigation">Add Jobs</a>
+                                <ul class="navi_2_dropdown" id="sectorNav">
+                                </ul>
+                            </li>
+
+                        }
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="has-mega gc_main_navigation">
+                                <a href="/applicationusers" class="gc_main_navigation">Users</a>
+                                <ul class="navi_2_dropdown" id="sectorNav">
+                                </ul>
+                            </li>
+
+                        }
+                        <!--<li class=" gc_main_navigation">-->
+                        @*has-mega*@
+                        <!--<a href="#" class="gc_main_navigation">News</a>
+
+    </li>-->
+                        <li>
+                            <a href="/about" class="gc_main_navigation">About</a>
+                            <ul class="navi_2_dropdown" id="clientsCandidate">
+                                <li class="parent">
+                                    <a href="/joinus"><i class="fas fa-square"></i> Join Us</a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+                        <li>
+                            <a href="/account/registerr" class="gc_main_navigation">sign Up as recruiter</a>
+
+
+                        </li>
+                        @if (Request.IsAuthenticated)
+                        {
+                            <li>
+                                <a href="/manage/index" class="gc_main_navigation">Setting</a>
+
+
+                            </li>
+                        }
+
+
+                    </ul>
+                </div>
+                <!-- mainmenu end -->
+                
+            </div>
+        </div>
+    </div>
+
+
+    @*@if (ViewBag.IsBreadcrums == null)
+    {
+        <text>
+            <div class="page_title_section">
+                <div class="page_header">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-9 col-md-9 col-12 col-sm-8">
+                                <h1>@ViewBag.SubTitle</h1>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-12 col-sm-4">
+                                <div class="sub_title_section">
+                                    <ul class="sub_title">
+                                        <li> <a href="/"> Home </a>&nbsp; / &nbsp;</li>
+                                        @if (ViewBag.ParentTitle != null)
+                                        {
+                                            <li>@ViewBag.ParentTitle&nbsp; / &nbsp;</li>
+                                        }
+                                        <li>@ViewBag.SubTitle</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </text>
+    }*@
+
+<div class="container">
+    @RenderBody()
+</div>
+
+    <div class="news_letter_wrapper shaa jb_cover">
+        @*<div class="sha1">
+                <img src="~/App_Themes/Website/images/bubble2.png" class="img-responsive " alt="@companyName" />
+            </div>*@
+        
+
+    </div>
+
+    @* FOOTER *@
+    <div class="footer index2_footer_wrapper footer_index3 shaa jb_cover">
+        @*<div class="ft_shape bubble-18">
+                <img src="~/App_Themes/Website/images/bubble2.png" class="img-responsive " alt="img" />
+            </div>*@
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="footerNav jb_cover footer_border_displ">
+                        <h5>SECTORS</h5>
+                        <ul class="nav-widget">
+                            <li>
+                                <a href="/jobs/oil-and-gas"><i class="fa fa-square"></i>Oil and Gas</a>
+                            </li>
+                            <li>
+                                <a href="/jobs/power"><i class="fa fa-square"></i>Power</a>
+                            </li>
+                            <li>
+                                <a href="/jobs/life-science"><i class="fa fa-square"></i>Life Science</a>
+                            </li>
+                            <li>
+                                <a href="/jobs/it"><i class="fa fa-square"></i>Information Technology</a>
+                            </li>
+                            <li>
+                                <a href="/jobs/construction"><i class="fa fa-square"></i>Construction</a>
+                            </li>
+                            <li>
+                                <a href="/jobs/mining"><i class="fa fa-square"></i>Mining</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="footerNav jb_cover footer_border_displ">
+                        <h5>LINKS</h5>
+                        <ul class="nav-widget">
+                            <li>
+                                <a href="/clients/permanenthire">
+                                    <i class="fa fa-square"></i>Permanent Hire
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/clients/contractstaffing">
+                                    <i class="fa fa-square"></i>Contract Hiring
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/clients/mobility">
+                                    <i class="fa fa-square"></i>Mobility Services
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/clients/managedsolutions"><i class="fa fa-square"></i> Managed Services</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="footerNav jb_cover footer_border_displ">
+                        <h5>CANDIDATES</h5>
+                        <ul class="nav-widget">
+
+                            <li class=""><a href="/candidates/careeradvice"><i class="fas fa-square"></i> Career Advice</a></li>
+                            <li class=""><a href="/candidates/contractorsupport"><i class="fas fa-square"></i> Contract Support</a></li>
+                            <li class=""><a href="/candidates/safety"><i class="fas fa-square"></i> Safety</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="footerNav jb_cover footer_border_displ">
+                        <h5>ABOUT US</h5>
+                        <ul class="nav-widget">
+                            <li>
+                                <a href="/about"><i class="fa fa-square"></i>The Team</a>
+                            </li>
+                            <li>
+                                <a href="/about"><i class="fa fa-square"></i>Projects</a>
+                            </li>
+                            <li>
+                                <a href="/about"><i class="fa fa-square"></i>Privacy</a>
+                            </li>
+                            <li>
+                                <a href="/joinus"><i class="fa fa-square"></i>Join Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                @*<div class="copyright_left">
+                        <i class="fa fa-copyright"></i> @DateTime.Now.Year <strong>@System.Web.Configuration.WebConfigurationManager.AppSettings["SolutionName"].ToString()</strong> for @companyName. All Rights Reserved. Handcrafted with <i class="fa fa-heart text-danger"></i> by <label data-toggle="tooltip" data-placement="top" title="ICodeDigita (SMC) Pvt Ltd">ICodeDigita</label>.
+                    </div>*@
+
+                <div class="clearfix"></div>
+
+            </div>
+            <!--/.row-->
+        </div>
+       
+    </div>
+
+    
+    <script src="~/App_Themes/Website/js/bootstrap.min.js?@DateTime.Now.Ticks"></script>
+    <script src="~/App_Themes/Website/js/customS.js?@DateTime.Now.Ticks"></script>
+    <script src="~/App_Themes/Website/js/modernizr.js"></script>
+    <script src="~/App_Themes/Website/js/jquery.menu-aim.js"></script>
+    <script src="~/App_Themes/Website/js/plugin.js?@DateTime.Now.Ticks"></script>
+    <script src="~/App_Themes/Website/js/owl.carousel.js"></script>
+    <script src="~/App_Themes/Website/js/jquery-ui.js"></script>
+    <script src="~/App_Themes/Website/js/jquery.countTo.js"></script>
+    <script src="~/App_Themes/Website/js/jquery.magnific-popup.js"></script>
+    <script src="~/App_Themes/Website/js/dropify.min.js"></script>
+    <script src="~/App_Themes/Website/js/jquery.inview.min.js"></script>
+    <script src="~/App_Themes/Website/js/jquery.nice-select.min.js"></script>
+    <script src="~/App_Themes/Website/js/imagesloaded.pkgd.min.js"></script>
+    <script src="~/App_Themes/Website/js/isotope.pkgd.min.js"></script>
+    <script src="~/App_Themes/Website/js/custom.js"></script>
+    <script src=" https://rawgit.com/notifyjs/notifyjs/master/dist/notify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js" integrity="sha256-2RS1U6UNZdLS0Bc9z2vsvV4yLIbJNKxyA4mrx5uossk=" crossorigin="anonymous"></script>
+
+    @RenderSection("scripts", required: false)
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157983124-1"></script>
+    <script>
+        $("#signup").click(function () {
+
+            window.location.href = '/account/register';
+        });
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-157983124-1');
+    </script>
+
+</body>
+</html>

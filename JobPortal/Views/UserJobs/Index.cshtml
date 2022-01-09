@@ -1,0 +1,39 @@
+﻿@model IEnumerable<JobPortal.Models.jobs>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row" id="jobListInner">
+
+    @foreach(var j in Model)
+    {
+    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="job_listing_left_fullwidth jb_cover">
+            <div class="row">
+                
+                <div class="col-lg-9 col-md-9 col-sm-12 col-12">
+                    
+                    <div class="jp_job_post_right_cont">
+                        
+                        <h4><a href="~/userjobs/apply?jobid=@j.JobId">@j.Title</a></h4>
+                        <ul>
+                            <li><i class="flaticon-cash"></i>@j.Salary</li>
+                            <li><i class="flaticon-location-pointer"></i>@j.Location</li>
+                        </ul>
+                    </div>
+                </div><div class="col-lg-3 col-md-3 col-sm-12 col-12">
+                    <div class="jp_job_post_right_btn_wrapper">
+                        <ul>
+                            <li>
+                                <a href="~/userjobs/apply?jobid=@j.JobId" title="' + i.Title + '" class="btn bt-sm">Apply</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+</div>
+

@@ -1,0 +1,107 @@
+﻿@model IEnumerable<JobPortal.Models.jobs>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Jobs</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create",new { },new { @class = "btn btn-primary"})
+</p>
+<table class="table table-responsive">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Skills)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequiredDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequiredResponsibilities)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequiredQualification)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequiredExperience)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HrsPerWeek)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MinExpInYr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoOfOpening)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Skills)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequiredDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequiredResponsibilities)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequiredQualification)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequiredExperience)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HrsPerWeek)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MinExpInYr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoOfOpening)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+       
+       
+        <td>
+             <a href="@Url.Action("Index","Applicants", new { jobid = item.JobId })">Applicants</a> |
+            @Html.ActionLink("Edit", "Edit", new { id = item.JobId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.JobId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.JobId })
+        </td>
+    </tr>
+}
+
+</table>

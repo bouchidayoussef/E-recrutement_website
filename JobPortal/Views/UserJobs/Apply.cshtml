@@ -1,0 +1,177 @@
+﻿@model JobPortal.Models.jobs
+@{
+    ViewBag.ParentTitle = "Jobs";
+    ViewBag.SubTitle = "Apply Job";
+
+    int? jobId = 0;
+
+   
+
+        
+
+          
+
+            <text>
+
+                <div class="job_single_wrapper jb_cover">
+                                <div class="container">
+                                    @if (TempData["applied"] != null)
+                                    {
+                                        <div class="alert alert-success alert-dismissible">
+                                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                            <strong>@TempData["applied"]</strong>
+                                        </div>
+                                    }
+                                    @if (TempData["Already"] != null)
+                                    {
+                                        <div class="alert alert-danger alert-dismissible">
+                                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                            <strong>@TempData["Already"]</strong>
+                                        </div>
+                                    }
+                                    @*@if (User.IsInRole("Admin"))
+        {
+            <div>
+                <button onclick="myFunction()" class="btn btn-primary">Copy job Link</button>
+            </div>
+        }*@
+
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                                            <div class="job_filter_category_sidebar jb_cover">
+                                                <div class="job_filter_sidebar_heading jb_cover">
+                                                    <h1>job's overview</h1>
+                                                </div>
+                                                <div class="job_overview_header jb_cover">
+                                                    <div class="jb_job_overview_img">
+                                                        <img src="~/App_Themes/Website/images/overview.png" alt="@Model.Title" />
+                                                        <h4>@Model.Title</h4>
+                                                        <p>Client in @Model.Location.</p>
+                                                        
+                                                    </div>
+                                                   
+                                                    <div class="jp_listing_overview_list_main_wrapper jb_cover">
+                                                        <div class="jp_listing_list_icon">
+                                                            <i class="fas fa-map-marker-alt"></i>
+                                                        </div>
+                                                        <div class="jp_listing_list_icon_cont_wrapper">
+                                                            <ul>
+                                                                <li>Location:</li>
+                                                                <li>@Model.Location</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    @*<div class="jp_listing_overview_list_main_wrapper jb_cover">
+                            <div class="jp_listing_list_icon">
+                                <i class="fa fa-info-circle"></i>
+                            </div>
+                            <div class="jp_listing_list_icon_cont_wrapper">
+                                <ul>
+                                    <li>Job Title:</li>
+                                    <li>QA/QC Manager</li>
+                                </ul>
+                            </div>
+                        </div>*@
+                                                    <div class="jp_listing_overview_list_main_wrapper jb_cover">
+                                                        <div class="jp_listing_list_icon">
+                                                            <i class="far fa-clock"></i>
+                                                        </div>
+                                                        <div class="jp_listing_list_icon_cont_wrapper">
+                                                            <ul>
+                                                                <li>Hours/Week</li>
+                                                                <li>@Model.HrsPerWeek</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="jp_listing_overview_list_main_wrapper jb_cover">
+                                                        <div class="jp_listing_list_icon">
+                                                            <i class="far fa-money-bill-alt"></i>
+                                                        </div>
+                                                        <div class="jp_listing_list_icon_cont_wrapper">
+                                                            <ul>
+                                                                <li>Salary:</li>
+                                                                <li>@Model.Salary</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                    @*<div class="jp_listing_overview_list_main_wrapper jb_cover">
+                            <div class="jp_listing_list_icon">
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="jp_listing_list_icon_cont_wrapper">
+                                <ul>
+                                    <li>Experience:</li>
+                                    <li>+ Years Experience</li>
+                                </ul>
+                            </div>
+                        </div>*@
+                                                    <div class="header_btn search_btn news_btn overview_btn  jb_cover">
+
+                                                        <a href="@Url.Action("applied","userjobs",new { jobid = Model.JobId})">apply now</a>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+                                            <div class="jb_listing_single_overview jb_cover">
+                                                <div class="jp_job_des jb_cover">
+                                                    <h2 class="job_description_heading">Job Description</h2>
+
+                                                    @Html.Raw(Server.HtmlDecode(Model.RequiredDescription))
+                                                </div>
+                                                @*<div class="jp_job_res jb_cover">
+                        <h2 class="job_description_heading">Responsibilities</h2>
+
+                        @Html.Raw(Server.HtmlDecode(i.RequiredResponsibilities))
+                    </div>
+
+                    <div class="jp_job_res jb_cover minimum_cover">
+                        <h2 class="job_description_heading">Required Qualifications</h2>
+
+                        @Html.Raw(Server.HtmlDecode(i.RequiredQualification))
+                    </div>*@
+                                                <div class="jp_job_res jb_cover minimum_cover">
+                                                    <h2 class="job_description_heading">Required Experience/Skills</h2>
+
+                                                    @Html.Raw(Server.HtmlDecode(Model.RequiredExperience))
+                                                    <br />
+                                                    @Html.Raw(Server.HtmlDecode(Model.Skills))
+                                                </div>
+                                                <div class="jp_job_res jb_cover">
+                                                    <h2 class="job_description_heading">how to apply</h2>
+                                                    <p>
+                                                        To apply this job. Complete your profile to ensure that the recuriter can analyze your maximum details before shortlisting for the job opportunity.
+                                                    </p>
+                                                </div>
+                                                @*<div class="jp_job_res jb_cover">
+                        <h2 class="job_description_heading">location</h2>
+                        <div class="map_wrapper jb_cover">
+                            <div id='map'>
+                            </div>
+                        </div>
+
+                    </div>*@
+
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                </div>
+            </text>
+       
+
+       
+    
+   
+}
+
+@section scripts{
+
+}
+
